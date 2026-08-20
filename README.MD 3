@@ -1,0 +1,7 @@
+ Summary
+
+Max Heap is a complete binary tree data structure. In Max Heap, the parent node value is always greater than or equal to its child nodes. Because of this property, the maximum element is always present at the root. Max Heap can be implemented using an array and supports operations like insertion, deletion, and heapify efficiently. It is mainly used in priority queues and heap sort.
+
+Conclusion
+
+In conclusion, Max Heap is an important data structure used to manage elements based on their priority or value. It helps us to quickly access the maximum element and perform insertion and deletion efficiently. Thus, Max Heap is useful in many computer science applications and helps in improving the performance of algorithms.
