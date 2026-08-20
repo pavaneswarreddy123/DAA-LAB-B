@@ -1,0 +1,9 @@
+ Summary
+
+Linear Search checks each element one by one until the required element is found or the list ends. It is simple and works on both sorted and unsorted data, but can be slower for large datasets.
+
+Binary Search repeatedly divides a **sorted** list into two halves, making it much faster for large datasets. However, it requires the data to be sorted.
+
+ Conclusion
+
+Both searching techniques are useful depending on the situation. **Linear Search** is best for small or unsorted data, while **Binary Search** is more efficient for large sorted datasets because it reduces the number of comparisons significantly.
