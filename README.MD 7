@@ -1,0 +1,8 @@
+ Time Complexity and Space Complexity
+Summary
+
+**Time Complexity** and **Space Complexity** are used to measure the efficiency of an algorithm. Time complexity tells us how much time an algorithm takes to complete based on the input size. Space complexity tells us how much memory or extra space is required by the algorithm while executing. Common time complexities include **O(1), O(log n), O(n), O(n²)**, etc.
+
+ Conclusion
+
+In conclusion, time complexity and space complexity are important for analyzing and comparing algorithms. They help us understand which algorithm is faster and which one uses less memory. By considering both time and space complexity, we can choose a more efficient algorithm for solving a problem.
