@@ -1,0 +1,7 @@
+Iterative and Recursive 
+Summary
+
+Iteration and recursion are two methods used to solve programming problems. **Iteration** uses loops such as `for` and `while` to repeat a set of statements until a condition is satisfied. **Recursion** solves a problem by calling the same function repeatedly until it reaches a base condition. Both methods can be used to solve similar problems, but their approach is different.
+ Conclusion
+
+In conclusion, both iterative and recursive methods are important in programming. Iteration is generally simple and uses less memory, while recursion can make some problems easier to understand and solve. The choice between iteration and recursion depends on the type and complexity of the problem.
