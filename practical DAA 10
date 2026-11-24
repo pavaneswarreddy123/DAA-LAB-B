@@ -1,0 +1,89 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Edge {
+    int u, v, weight;
+};
+
+// Compare edges by weight
+bool compare(Edge a, Edge b) {
+    return a.weight < b.weight;
+}
+
+// Find parent of a vertex
+int findParent(int parent[], int x) {
+    if (parent[x] == x)
+        return x;
+
+    return parent[x] = findParent(parent, parent[x]);
+}
+
+// Union two sets
+void unionSet(int parent[], int rank[], int u, int v) {
+    u = findParent(parent, u);
+    v = findParent(parent, v);
+
+    if (rank[u] < rank[v])
+        parent[u] = v;
+    else if (rank[u] > rank[v])
+        parent[v] = u;
+    else {
+        parent[v] = u;
+        rank[u]++;
+    }
+}
+
+int main() {
+    int V, E;
+    cin >> V >> E;
+
+    vector<Edge> edges(E);
+
+    // Input edges
+    for (int i = 0; i < E; i++) {
+        cin >> edges[i].u
+            >> edges[i].v
+            >> edges[i].weight;
+    }
+
+    // Sort edges by weight
+    sort(edges.begin(), edges.end(), compare);
+
+    int parent[100], rank[100];
+
+    for (int i = 0; i < V; i++) {
+        parent[i] = i;
+        rank[i] = 0;
+    }
+
+    int totalWeight = 0;
+    int edgeCount = 0;
+
+    cout << "Edges in MST:\n";
+
+    for (auto edge : edges) {
+        int u = findParent(parent, edge.u);
+        int v = findParent(parent, edge.v);
+
+        // If they don't form a cycle
+        if (u != v) {
+            cout << edge.u << " - "
+                 << edge.v << " : "
+                 << edge.weight << endl;
+
+            totalWeight += edge.weight;
+            unionSet(parent, rank, u, v);
+
+            edgeCount++;
+
+            if (edgeCount == V - 1)
+                break;
+        }
+    }
+
+    cout << "Total Weight = " << totalWeight << endl;
+
+    return 0;
+}
